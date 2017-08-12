@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using WaCore.Contracts.Entities.Core;
 
 namespace WaCore.Entities.Core

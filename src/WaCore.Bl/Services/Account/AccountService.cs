@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Identity;
 using WaCore.Contracts.Bl.Services.Account;
 using WaCore.Contracts.Entities.Core;
 using WaCore.Entities.Core;
+using Microsoft.AspNetCore.Identity;
 
 namespace WaCore.Bl.Services.Account
 {

@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>WaCore.UnitTests Class Library</Description>
+    <Authors>Herbert</Authors>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <AssemblyName>WaCore.UnitTests</AssemblyName>
+    <PackageId>WaCore.UnitTests</PackageId>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0" />
+    <PackageReference Include="Microsoft.TestPlatform.TestHost" Version="15.3.0" />
+    <PackageReference Include="NSubstitute" Version="2.0.3" />
+    <PackageReference Include="xunit" Version="2.2.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WaCore.Bl\WaCore.Bl.csproj" />
+    <ProjectReference Include="..\WaCore.Contracts\WaCore.Contracts.csproj" />
+    <ProjectReference Include="..\WaCore.Data\WaCore.Data.csproj" />
+    <ProjectReference Include="..\WaCore.Entities\WaCore.Entities.csproj" />
+    <ProjectReference Include="..\WaCore.Utils\WaCore.Utils.csproj" />
+    <ProjectReference Include="..\WaCore.Web\WaCore.Web.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
+  </ItemGroup>
+
+</Project>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
-using Microsoft.AspNet.Cryptography.KeyDerivation;
+using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using WaCore.Contracts.Bl.Services;
 using WaCore.Contracts.Enums;
 

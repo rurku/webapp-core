@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Mvc.Controllers;
-using Microsoft.AspNet.Mvc.Razor;
-using Microsoft.Framework.Configuration;
-using Microsoft.Framework.DependencyInjection;
 using WaCore.Web.Infrastructure;
-using Microsoft.Framework.DependencyInjection.Extensions;
 using WaCore.Contracts.Bl.Services.Account;
 using WaCore.Web.Controllers;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.AspNetCore.Mvc.Razor;
 
 namespace WaCore.Web
 {
@@ -28,7 +27,7 @@ namespace WaCore.Web
             // so you may need to compare your custom views to the originals again after upgrades
 
 
-            services.AddMvc();
+            services.AddMvcCore();
             return services;
         }
     }

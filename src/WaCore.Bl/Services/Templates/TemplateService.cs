@@ -47,14 +47,14 @@ namespace WaCore.Bl.Services.Templates
 
         private string GetTextFromTemplate(string templateText, string templateKey, object inputObject)
         {
-#if DNX451
-            var text = Engine.Razor.RunCompile(templateText, templateKey, null, inputObject);
-            return text;
-#endif
-#if DNXCORE50
+//#if DNX451
+//            var text = Engine.Razor.RunCompile(templateText, templateKey, null, inputObject);
+//            return text;
+//#endif
+//#if DNXCORE50
             //TODO: RazorEngine does not work for DNXCORE50 until yet
             return templateText;
-#endif
+//#endif
         }
 
         private IEmailTemplate GetEmailTemplate(string templateName, LanguageEnum language)

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.Data.Entity;
 using WaCore.Contracts.Data.Repositories.Base;
 
 namespace WaCore.Data.Repositories.Base
