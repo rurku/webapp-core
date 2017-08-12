@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>dnx451;dnxcore50</TargetFrameworks>
+    <TargetFrameworks>netcoreapp1.1</TargetFrameworks>
     <AssemblyName>Example.Web</AssemblyName>
     <PackageId>Example.Web</PackageId>
     <UserSecretsId>aspnet5-Example.Web-20151223095404</UserSecretsId>
@@ -16,6 +16,11 @@
   <ItemGroup>
     <Compile Remove="wwwroot\**\*;node_modules" />
     <EmbeddedResource Remove="wwwroot\**\*;node_modules" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
     <None Update="**.user;**.vspscc">
       <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </None>
@@ -30,7 +35,7 @@
     <ProjectReference Include="..\Example.Data\Example.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
+  <!--<ItemGroup>
     <PackageReference Include="Microsoft.AspNet.IISPlatformHandler" Version="1.0.0-beta8" />
     <PackageReference Include="Microsoft.AspNet.Server.Kestrel" Version="1.0.0-beta8" />
     <PackageReference Include="Microsoft.Framework.Configuration.UserSecrets" Version="1.0.0-beta8" />
@@ -41,12 +46,7 @@
     <PackageReference Include="Microsoft.Framework.DependencyInjection.Abstractions" Version="1.0.0-beta8" />
     <PackageReference Include="Microsoft.AspNet.Tooling.Razor" Version="1.0.0-beta8" />
     <PackageReference Include="EntityFramework.SqlServer" Version="7.0.0-beta8" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'dnx451' ">
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
+  </ItemGroup>-->
 
   <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish" Condition=" '$(IsCrossTargetingBuild)' != 'true' ">
     <Exec Command="npm install" />

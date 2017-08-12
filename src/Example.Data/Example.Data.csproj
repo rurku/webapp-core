@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Description>Example.Data Class Library</Description>
     <Authors>h.bodner</Authors>
-    <TargetFrameworks>dnx451;dnxcore50</TargetFrameworks>
+    <TargetFrameworks>netstandard1.6</TargetFrameworks>
     <AssemblyName>Example.Data</AssemblyName>
     <PackageId>Example.Data</PackageId>
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
@@ -15,26 +15,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WaCore.Data\WaCore.Data.csproj" />
-    <ProjectReference Include="..\WaCore.Contracts\WaCore.Contracts.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="1.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="1.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="1.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="1.1.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="EntityFramework.Commands" Version="7.0.0-beta8" />
-    <PackageReference Include="EntityFramework.SqlServer" Version="7.0.0-beta8" />
+    <ProjectReference Include="..\WaCore.Data\WaCore.Data.csproj" />
+    <ProjectReference Include="..\WaCore.Contracts\WaCore.Contracts.csproj" />
   </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'dnx451' ">
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'dnxcore50' ">
-    <PackageReference Include="Microsoft.CSharp" Version="4.0.1" />
-    <PackageReference Include="System.Collections" Version="4.0.11" />
-    <PackageReference Include="System.Linq" Version="4.1.0" />
-    <PackageReference Include="System.Runtime" Version="4.1.0" />
-    <PackageReference Include="System.Threading" Version="4.0.11" />
-  </ItemGroup>
-
 </Project>

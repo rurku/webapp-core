@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Mvc;
 using WaCore.Contracts.Bl.Services;
 using WaCore.Web.Infrastructure;
 using WaCore.Web.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WaCore.Web.Controllers.Base
 {

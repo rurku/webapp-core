@@ -1,242 +1,242 @@
-using System;
-using Microsoft.Data.Entity;
-using Microsoft.Data.Entity.Infrastructure;
-using Microsoft.Data.Entity.Metadata;
-using Microsoft.Data.Entity.Migrations;
-using Example.Data;
+// TODO: Is this file needed?
 
-namespace Example.Data.Migrations
-{
-    [DbContext(typeof(ExampleDbContext))]
-    [Migration("20151225142128_Initial")]
-    partial class Initial
-    {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
-        {
-            modelBuilder
-                .Annotation("ProductVersion", "7.0.0-beta8-15964")
-                .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+//using System;
+//using Example.Data;
+//using Microsoft.EntityFrameworkCore.Infrastructure;
+//using Microsoft.EntityFrameworkCore.Migrations;
 
-            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRoleClaim<System.Guid>", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+//namespace Example.Data.Migrations
+//{
+//    [DbContext(typeof(ExampleDbContext))]
+//    [Migration("20151225142128_Initial")]
+//    partial class Initial
+//    {
+//        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+//        {
+//            modelBuilder
+//                .Annotation("ProductVersion", "7.0.0-beta8-15964")
+//                .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ClaimType");
+//            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRoleClaim<System.Guid>", b =>
+//                {
+//                    b.Property<int>("Id")
+//                        .ValueGeneratedOnAdd();
 
-                    b.Property<string>("ClaimValue");
+//                    b.Property<string>("ClaimType");
 
-                    b.Property<Guid>("RoleId");
+//                    b.Property<string>("ClaimValue");
 
-                    b.HasKey("Id");
+//                    b.Property<Guid>("RoleId");
 
-                    b.Annotation("Relational:TableName", "AspNetRoleClaims");
-                });
+//                    b.HasKey("Id");
 
-            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserClaim<System.Guid>", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+//                    b.Annotation("Relational:TableName", "AspNetRoleClaims");
+//                });
 
-                    b.Property<string>("ClaimType");
+//            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserClaim<System.Guid>", b =>
+//                {
+//                    b.Property<int>("Id")
+//                        .ValueGeneratedOnAdd();
 
-                    b.Property<string>("ClaimValue");
+//                    b.Property<string>("ClaimType");
 
-                    b.Property<Guid>("UserId");
+//                    b.Property<string>("ClaimValue");
 
-                    b.HasKey("Id");
+//                    b.Property<Guid>("UserId");
 
-                    b.Annotation("Relational:TableName", "AspNetUserClaims");
-                });
+//                    b.HasKey("Id");
 
-            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserLogin<System.Guid>", b =>
-                {
-                    b.Property<string>("LoginProvider");
+//                    b.Annotation("Relational:TableName", "AspNetUserClaims");
+//                });
 
-                    b.Property<string>("ProviderKey");
+//            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserLogin<System.Guid>", b =>
+//                {
+//                    b.Property<string>("LoginProvider");
 
-                    b.Property<string>("ProviderDisplayName");
+//                    b.Property<string>("ProviderKey");
 
-                    b.Property<Guid>("UserId");
+//                    b.Property<string>("ProviderDisplayName");
 
-                    b.HasKey("LoginProvider", "ProviderKey");
+//                    b.Property<Guid>("UserId");
 
-                    b.Annotation("Relational:TableName", "AspNetUserLogins");
-                });
+//                    b.HasKey("LoginProvider", "ProviderKey");
 
-            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserRole<System.Guid>", b =>
-                {
-                    b.Property<Guid>("UserId");
+//                    b.Annotation("Relational:TableName", "AspNetUserLogins");
+//                });
 
-                    b.Property<Guid>("RoleId");
+//            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserRole<System.Guid>", b =>
+//                {
+//                    b.Property<Guid>("UserId");
 
-                    b.HasKey("UserId", "RoleId");
+//                    b.Property<Guid>("RoleId");
 
-                    b.Annotation("Relational:TableName", "AspNetUserRoles");
-                });
+//                    b.HasKey("UserId", "RoleId");
 
-            modelBuilder.Entity("WaCore.Entities.Core.Permission", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
+//                    b.Annotation("Relational:TableName", "AspNetUserRoles");
+//                });
 
-                    b.Property<string>("Description");
+//            modelBuilder.Entity("WaCore.Entities.Core.Permission", b =>
+//                {
+//                    b.Property<Guid>("Id")
+//                        .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Name");
+//                    b.Property<string>("Description");
 
-                    b.HasKey("Id");
-                });
+//                    b.Property<string>("Name");
 
-            modelBuilder.Entity("WaCore.Entities.Core.Role", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
+//                    b.HasKey("Id");
+//                });
 
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken();
+//            modelBuilder.Entity("WaCore.Entities.Core.Role", b =>
+//                {
+//                    b.Property<Guid>("Id")
+//                        .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Description");
+//                    b.Property<string>("ConcurrencyStamp")
+//                        .IsConcurrencyToken();
 
-                    b.Property<string>("Name")
-                        .Annotation("MaxLength", 256);
+//                    b.Property<string>("Description");
 
-                    b.Property<string>("NormalizedName")
-                        .Annotation("MaxLength", 256);
+//                    b.Property<string>("Name")
+//                        .Annotation("MaxLength", 256);
 
-                    b.HasKey("Id");
+//                    b.Property<string>("NormalizedName")
+//                        .Annotation("MaxLength", 256);
 
-                    b.Index("NormalizedName")
-                        .Annotation("Relational:Name", "RoleNameIndex");
+//                    b.HasKey("Id");
 
-                    b.Annotation("Relational:TableName", "AspNetRoles");
-                });
+//                    b.Index("NormalizedName")
+//                        .Annotation("Relational:Name", "RoleNameIndex");
 
-            modelBuilder.Entity("WaCore.Entities.Core.RolePermission", b =>
-                {
-                    b.Property<Guid>("PermissionId");
+//                    b.Annotation("Relational:TableName", "AspNetRoles");
+//                });
 
-                    b.Property<Guid>("RoleId");
+//            modelBuilder.Entity("WaCore.Entities.Core.RolePermission", b =>
+//                {
+//                    b.Property<Guid>("PermissionId");
 
-                    b.HasKey("PermissionId", "RoleId");
-                });
+//                    b.Property<Guid>("RoleId");
 
-            modelBuilder.Entity("WaCore.Entities.Core.User", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
+//                    b.HasKey("PermissionId", "RoleId");
+//                });
 
-                    b.Property<int>("AccessFailedCount");
+//            modelBuilder.Entity("WaCore.Entities.Core.User", b =>
+//                {
+//                    b.Property<Guid>("Id")
+//                        .ValueGeneratedOnAdd();
 
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken();
+//                    b.Property<int>("AccessFailedCount");
 
-                    b.Property<string>("Email")
-                        .Annotation("MaxLength", 256);
+//                    b.Property<string>("ConcurrencyStamp")
+//                        .IsConcurrencyToken();
 
-                    b.Property<bool>("EmailConfirmed");
+//                    b.Property<string>("Email")
+//                        .Annotation("MaxLength", 256);
 
-                    b.Property<string>("HashedPassword");
+//                    b.Property<bool>("EmailConfirmed");
 
-                    b.Property<bool>("LockoutEnabled");
+//                    b.Property<string>("HashedPassword");
 
-                    b.Property<DateTimeOffset?>("LockoutEnd");
+//                    b.Property<bool>("LockoutEnabled");
 
-                    b.Property<string>("Name");
+//                    b.Property<DateTimeOffset?>("LockoutEnd");
 
-                    b.Property<string>("NormalizedEmail")
-                        .Annotation("MaxLength", 256);
+//                    b.Property<string>("Name");
 
-                    b.Property<string>("NormalizedUserName")
-                        .Annotation("MaxLength", 256);
+//                    b.Property<string>("NormalizedEmail")
+//                        .Annotation("MaxLength", 256);
 
-                    b.Property<string>("PasswordHash");
+//                    b.Property<string>("NormalizedUserName")
+//                        .Annotation("MaxLength", 256);
 
-                    b.Property<string>("PhoneNumber");
+//                    b.Property<string>("PasswordHash");
 
-                    b.Property<bool>("PhoneNumberConfirmed");
+//                    b.Property<string>("PhoneNumber");
 
-                    b.Property<string>("PlainPassword");
+//                    b.Property<bool>("PhoneNumberConfirmed");
 
-                    b.Property<string>("SecurityStamp");
+//                    b.Property<string>("PlainPassword");
 
-                    b.Property<bool>("TwoFactorEnabled");
+//                    b.Property<string>("SecurityStamp");
 
-                    b.Property<string>("UserName")
-                        .Annotation("MaxLength", 256);
+//                    b.Property<bool>("TwoFactorEnabled");
 
-                    b.HasKey("Id");
+//                    b.Property<string>("UserName")
+//                        .Annotation("MaxLength", 256);
 
-                    b.Index("NormalizedEmail")
-                        .Annotation("Relational:Name", "EmailIndex");
+//                    b.HasKey("Id");
 
-                    b.Index("NormalizedUserName")
-                        .Annotation("Relational:Name", "UserNameIndex");
+//                    b.Index("NormalizedEmail")
+//                        .Annotation("Relational:Name", "EmailIndex");
 
-                    b.Annotation("Relational:TableName", "AspNetUsers");
-                });
+//                    b.Index("NormalizedUserName")
+//                        .Annotation("Relational:Name", "UserNameIndex");
 
-            modelBuilder.Entity("WaCore.Entities.Core.UserPermission", b =>
-                {
-                    b.Property<Guid>("PermissionId");
+//                    b.Annotation("Relational:TableName", "AspNetUsers");
+//                });
 
-                    b.Property<Guid>("UserId");
+//            modelBuilder.Entity("WaCore.Entities.Core.UserPermission", b =>
+//                {
+//                    b.Property<Guid>("PermissionId");
 
-                    b.HasKey("PermissionId", "UserId");
-                });
+//                    b.Property<Guid>("UserId");
 
-            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRoleClaim<System.Guid>", b =>
-                {
-                    b.HasOne("WaCore.Entities.Core.Role")
-                        .WithMany()
-                        .ForeignKey("RoleId");
-                });
+//                    b.HasKey("PermissionId", "UserId");
+//                });
 
-            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserClaim<System.Guid>", b =>
-                {
-                    b.HasOne("WaCore.Entities.Core.User")
-                        .WithMany()
-                        .ForeignKey("UserId");
-                });
+//            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRoleClaim<System.Guid>", b =>
+//                {
+//                    b.HasOne("WaCore.Entities.Core.Role")
+//                        .WithMany()
+//                        .ForeignKey("RoleId");
+//                });
 
-            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserLogin<System.Guid>", b =>
-                {
-                    b.HasOne("WaCore.Entities.Core.User")
-                        .WithMany()
-                        .ForeignKey("UserId");
-                });
+//            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserClaim<System.Guid>", b =>
+//                {
+//                    b.HasOne("WaCore.Entities.Core.User")
+//                        .WithMany()
+//                        .ForeignKey("UserId");
+//                });
 
-            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserRole<System.Guid>", b =>
-                {
-                    b.HasOne("WaCore.Entities.Core.Role")
-                        .WithMany()
-                        .ForeignKey("RoleId");
+//            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserLogin<System.Guid>", b =>
+//                {
+//                    b.HasOne("WaCore.Entities.Core.User")
+//                        .WithMany()
+//                        .ForeignKey("UserId");
+//                });
 
-                    b.HasOne("WaCore.Entities.Core.User")
-                        .WithMany()
-                        .ForeignKey("UserId");
-                });
+//            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserRole<System.Guid>", b =>
+//                {
+//                    b.HasOne("WaCore.Entities.Core.Role")
+//                        .WithMany()
+//                        .ForeignKey("RoleId");
 
-            modelBuilder.Entity("WaCore.Entities.Core.RolePermission", b =>
-                {
-                    b.HasOne("WaCore.Entities.Core.Permission")
-                        .WithMany()
-                        .ForeignKey("PermissionId");
+//                    b.HasOne("WaCore.Entities.Core.User")
+//                        .WithMany()
+//                        .ForeignKey("UserId");
+//                });
 
-                    b.HasOne("WaCore.Entities.Core.Role")
-                        .WithMany()
-                        .ForeignKey("RoleId");
-                });
+//            modelBuilder.Entity("WaCore.Entities.Core.RolePermission", b =>
+//                {
+//                    b.HasOne("WaCore.Entities.Core.Permission")
+//                        .WithMany()
+//                        .ForeignKey("PermissionId");
 
-            modelBuilder.Entity("WaCore.Entities.Core.UserPermission", b =>
-                {
-                    b.HasOne("WaCore.Entities.Core.Permission")
-                        .WithMany()
-                        .ForeignKey("PermissionId");
+//                    b.HasOne("WaCore.Entities.Core.Role")
+//                        .WithMany()
+//                        .ForeignKey("RoleId");
+//                });
 
-                    b.HasOne("WaCore.Entities.Core.User")
-                        .WithMany()
-                        .ForeignKey("UserId");
-                });
-        }
-    }
-}
+//            modelBuilder.Entity("WaCore.Entities.Core.UserPermission", b =>
+//                {
+//                    b.HasOne("WaCore.Entities.Core.Permission")
+//                        .WithMany()
+//                        .ForeignKey("PermissionId");
+
+//                    b.HasOne("WaCore.Entities.Core.User")
+//                        .WithMany()
+//                        .ForeignKey("UserId");
+//                });
+//        }
+//    }
+//}
